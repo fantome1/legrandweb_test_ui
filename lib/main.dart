@@ -14,11 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Test UI',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const IntroPage(),
+          useMaterial3: true,
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.white)),
+      home: const SafeArea(child: IntroPage()),
     );
   }
 }
