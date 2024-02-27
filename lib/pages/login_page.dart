@@ -1,5 +1,6 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:legrandweb_test_ui/components/buttons.dart';
 import 'package:legrandweb_test_ui/components/forms.dart';
 import 'package:legrandweb_test_ui/utils/constants.dart';
@@ -25,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 200),
+            const SizedBox(height: 150),
             Text(
               'Numéro de téléphone*',
               style: TextStyle(
@@ -106,7 +107,101 @@ class _LoginPageState extends State<LoginPage> {
                   )),
             ),
             const SizedBox(height: 30),
-            Buttons.authButton(() => {}, 'CONNEXION')
+            Buttons.authButton(() => {}, 'CONNEXION'),
+            const SizedBox(height: 50),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  width: 120,
+                  child: Divider(
+                    color: Color(0xFF483838),
+                    thickness: 2,
+                  ),
+                ),
+                Text(
+                  '   Ou   ',
+                  style: TextStyle(
+                    fontFamily: 'Product Sans',
+                    fontSize: 13,
+                    color: Color(0xFF472D2D),
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                SizedBox(
+                  width: 120,
+                  child: Divider(
+                    color: Color(0xFF483838),
+                    thickness: 2,
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Buttons.buildOtherLoginCard(
+                    () => {}, Image.asset('assets/images/google.png')),
+                Buttons.buildOtherLoginCard(
+                    () => {}, Image.asset('assets/images/facebook.png')),
+                Buttons.buildOtherLoginCard(
+                    () => {}, Image.asset('assets/images/apple.png')),
+              ],
+            ),
+            const SizedBox(height: 40),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Vous n\'avez pas de compte? ',
+                  style: TextStyle(
+                    fontFamily: 'Product Sans',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 13,
+                    color: Color(0xFF555555),
+                  ),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: const Text(
+                    'INSCRIVEZ VOUS ICI',
+                    style: TextStyle(
+                      fontFamily: 'Product Sans',
+                      fontWeight: FontWeight.w700,
+                      fontSize: 13,
+                      color: Color(0xFF4CB050),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 50),
+            RichText(
+              textAlign: TextAlign.center,
+              text: const TextSpan(
+                style: TextStyle(
+                  fontFamily: 'Product Sans',
+                  fontWeight: FontWeight.w700,
+                  fontSize: 12,
+                  color: Color(0xFF555555),
+                ),
+                children: [
+                  TextSpan(
+                      text: 'En cliquant sur connexion, j\'ai lu et accepté '),
+                  TextSpan(
+                    text: 'les conditions d\'utilisation ',
+                    style: TextStyle(color: Color(0xFF5665CA)),
+                  ),
+                  TextSpan(text: 'et j\'ai pris connaissance de '),
+                  TextSpan(
+                    text: 'la politique de confidentialité.\n',
+                    style: TextStyle(color: Color(0xFF5665CA)),
+                  ),
+                  TextSpan(text: 'J\'ai au moins 18 ans.'),
+                ],
+              ),
+            ),
           ],
         ),
       ),

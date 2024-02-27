@@ -44,4 +44,19 @@ class Buttons {
       ),
     );
   }
+
+  static Widget buildOtherLoginCard(Function()? onTap, Widget icon) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 74,
+        height: 60,
+        decoration: BoxDecoration(
+          border: Border.all(color: const Color(0xFFDADADA), width: 2),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: icon,
+      ),
+    );
+  }
 }
